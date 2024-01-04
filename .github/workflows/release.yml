@@ -64,6 +64,7 @@ jobs:
           file: ./Dockerfile.multiarch
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
+          provenance: false
           tags: ${{ steps.prep.outputs.tags }}
           build-args: |
             APP_FOLDER=/go/src/github.com/${{ github.repository }}
